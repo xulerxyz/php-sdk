@@ -65,8 +65,8 @@ class Card
             'required' => ['amount', 'currency', 'phone', 'reference'],
         ],
          'card' => [
-            'name' => 'MasterCard',
-            'code' => 'MA',
+            'name' => '',
+            'code' => '',
             'required' => ['amount', 'currency', 'phone', 'accountNumber', 'accountExpiry', 'cvv', 'provider', 'code'],
         ],
     ];
