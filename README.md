@@ -23,11 +23,31 @@ use ContiPay\PhpSdk\Mobile;
 $contipay = new Mobile('your_api_key', 'your_api_secret');
 
 // Process a payment
-$response = $contipay->ecocash([
+$response = $contipay->mobile([
     'amount' => '50.00',
     'currency' => 'USD',
     'phone' => '0782000340',
-    'reference' => uniqid('PAY-')
+    'reference' => uniqid('PAY-'),
+    'provider' => 'EcoCash',
+    'code' => 'EC'
+]);
+
+OR
+
+// Initialize the SDK
+$contipay = new Card('your_api_key', 'your_api_secret');
+
+// Process a payment
+$response = $contipay->card([
+    'accountNumber' => '4111111111111111',
+    'accountExpiry' => '12/26',
+    'cvv' => '123',
+    'phone' => '0782000340',
+    'amount' => '50.00',
+    'currency' => 'USD',
+    'reference' => uniqid('CARD-'),
+    'provider' => 'Visa',
+    'code' => 'VA'
 ]);
 ```
 
@@ -74,6 +94,7 @@ $card = new Card($apiKey, $apiSecret, $mode, $method);
 * **OneMoney** (`$contipay->onemoney([...])`)
 * **Omari** (`$contipay->omari([...])`)
 * **InnBucks** (`$contipay->innbucks([...])`)
+* **All In One** (`$contipay->mobile([...])`)
 
 ---
 
@@ -116,6 +137,7 @@ try {
 * **Visa** (`$contipay->visa([...])`)
 * **MasterCard** (`$contipay->mastercard([...])`)
 * **ZimSwitch** (`$contipay->zimswitch([...])`)
+* **All In One** (`$contipay->card([...])`)
 
 ---
 
