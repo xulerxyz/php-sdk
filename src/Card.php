@@ -64,6 +64,11 @@ class Card
             'code' => 'ZS',
             'required' => ['amount', 'currency', 'phone', 'reference'],
         ],
+         'card' => [
+            'name' => 'MasterCard',
+            'code' => 'MA',
+            'required' => ['amount', 'currency', 'phone', 'accountNumber', 'accountExpiry', 'cvv', 'provider', 'code'],
+        ],
     ];
 
 
@@ -121,8 +126,8 @@ class Card
             $fields['country'] ?? 'ZW',
             $fields['reference'] ?? '',
             $fields['description'] ?? 'Payment',
-            $provider['name'],
-            $provider['code']
+            $provider['name'] ?? $fields['provider'],
+            $provider['code'] ?? $fields['code']
         );
     }
 

@@ -72,6 +72,11 @@ class Mobile
             'code' => 'OC',
             'required' => ['amount', 'currency', 'phone', 'reference'],
         ],
+        'mobile' => [
+            'name' => '',
+            'code' => '',
+            'required' => ['amount', 'currency', 'phone', 'reference', 'provider', 'code'],
+        ],
     ];
 
 
@@ -121,8 +126,8 @@ class Mobile
             $fields['phone'] ?? '',
             $fields['reference'] ?? '',
             $fields['description'] ?? 'Payment',
-            $provider['name'],
-            $provider['code']
+            $provider['name'] ?? $fields['provider'],
+            $provider['code'] ?? $fields['code']
         );
     }
 
