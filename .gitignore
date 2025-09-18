@@ -1,0 +1,53 @@
+# Example files
+index.php
+card.php
+mobile.php
+
+# Composer
+/vendor/
+composer.phar
+/composer.lock
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+.phpstorm.meta.php
+.php_cs.cache
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.backup
+.phpunit.result.cache
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*.swp
+*.swo
+
+# Build & Test directories
+/build/
+/coverage/
+/doc/
+/docs/api/
+/phpunit.xml
+.phpunit.cache/
+
+# Cache and logs
+/var/
+/temp/
+/tmp/
+/logs/
+*.cache
+
+# Misc
+*.phar
+.php-version
+.php-cs-fixer.cache
+.phplint.cache
