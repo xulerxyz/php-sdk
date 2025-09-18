@@ -126,8 +126,8 @@ class Mobile
             $fields['phone'] ?? '',
             $fields['reference'] ?? '',
             $fields['description'] ?? 'Payment',
-            $provider['name'] ?? $fields['provider'],
-            $provider['code'] ?? $fields['code']
+            $provider['name'] == '' ? $fields['provider'] : $provider['name'],
+            $provider['code'] == '' ? $fields['code'] : $provider['code']
         );
     }
 

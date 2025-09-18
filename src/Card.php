@@ -64,7 +64,7 @@ class Card
             'code' => 'ZS',
             'required' => ['amount', 'currency', 'phone', 'reference'],
         ],
-         'card' => [
+        'card' => [
             'name' => '',
             'code' => '',
             'required' => ['amount', 'currency', 'phone', 'accountNumber', 'accountExpiry', 'cvv', 'provider', 'code'],
@@ -126,8 +126,8 @@ class Card
             $fields['country'] ?? 'ZW',
             $fields['reference'] ?? '',
             $fields['description'] ?? 'Payment',
-            $provider['name'] ?? $fields['provider'],
-            $provider['code'] ?? $fields['code']
+            $provider['name'] == '' ? $fields['provider'] : $provider['name'],
+            $provider['code'] == '' ? $fields['code'] : $provider['code']
         );
     }
 
